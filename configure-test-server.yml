@@ -1,5 +1,6 @@
 ---
-- hosts: test-server
+- name: configure test server
+  hosts: test-server
   become: true
   tasks:
   - name: update apt
@@ -11,5 +12,5 @@
   - name: start docker service
     command: sudo systemctl start docker
 
-  - name: deploy insureme application
-    command: sudo docker run -itd -p 8081:8081 --name insure-me shubhamkushwah123/insure-me:1.0
+  - name: deploy Capstone-Insurance-Project
+    command: sudo docker run -itd -p 8085:8081 loksmohan2000/insure-me-app:1.0 
